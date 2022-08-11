@@ -13,10 +13,11 @@ datapage.insertAdjacentHTML("beforeend",`<tr>
 <td>${data[3][i]}</td>
 </tr>`)
 }})
-.catch(err => window.alert("Error Loading your Data"))
+.catch(err => {alert("Error Loading Your Data")})
 
 form.addEventListener('keypress', (e) =>{
 if(e.key === "Enter"){
+e.preventDefault()
 fetch("http://localhost:3000/data",
 {
     method: "POST",
@@ -32,5 +33,5 @@ fetch("http://localhost:3000/data",
         }
     )
 }
-).then(setTimeout(()=>{document.location.reload()},2000))
+).then(setTimeout(()=>{document.location.reload()},2000)) 
 }})

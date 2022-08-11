@@ -1,6 +1,8 @@
 const express = require('express');
 const flightScanner = require('skiplagged-node-api');
 const app = express();
+const serverless = require("serverless-http");
+const router = express.Router();
 var cors = require('cors');
 app.use(cors());
 var bodyParser = require('body-parser')
@@ -31,18 +33,32 @@ duration = response.map(object => object.duration)
 price = response.map(object => object.price);
 timeofFlight = response.map(object => (`${object.departureTime}=>${object.legs[object.legs.length-1].arrivalTime}`));
 resp.push(brands, price, duration,timeofFlight, searchOptions.resultsCount);
-console.log("Scanned Successfully!", resp)})
-.catch(err => console.log(err))
+})
+.catch(err => resp = err)
 }
 app.post('/data',function (req, res) {                                                 
   searchOptions.resultsCount = Number(req.body.Results_Count);
   searchOptions.from= String(req.body.From);
   searchOptions.to= String(req.body.To);
   searchOptions.departureDate= String(req.body.Departure_date);
-  Flight_Scan()
   res.send(resp)
+  Flight_Scan()
 }) 
 app.get('/', function (req, res) {                                                 
     res.send(resp)
   });
 app.listen(3000);
+
+///
+
+
+router.get("/", (req, res) => {
+  res.json({
+    hello: "hi!"
+  });
+});
+
+app.use(`/.netlify/functions/api`, router);
+
+module.exports = app;
+module.exports.handler = serverless(app);
