@@ -7,6 +7,7 @@ var bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
+console.log("This is backend")
 let prices;
 let brands;
 let resp = [];
@@ -43,7 +44,7 @@ app.post('/data',function (req, res) {
   Flight_Scan()
 }) 
 app.get('/', function (req, res) {                                                 
-    res.send(resp)
+    res.send("This is backend")
   });
 app.listen(process.env.PORT||3000);
 
