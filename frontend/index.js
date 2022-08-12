@@ -1,7 +1,7 @@
 const datapage = document.querySelector('#result')
 const form = document.getElementById('form');
 
-fetch('https://peaceful-pudding-db647f.netlify.app/.netlify/functions/api')
+fetch('https://peaceful-pudding-db647f.netlify.app')
 .then(response => response.json())
 .then(data => {for (let i = 0; i < data[data.length-1]; i++)
 {console.log(data);
@@ -18,7 +18,7 @@ datapage.insertAdjacentHTML("beforeend",`<tr>
 form.addEventListener('keypress', (e) =>{
 if(e.key === "Enter"){
 e.preventDefault()
-fetch("http://localhost:3000/data",
+fetch("https://peaceful-pudding-db647f.netlify.app/.netlify/functions/api",
 {
     method: "POST",
     headers: {
