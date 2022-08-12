@@ -45,6 +45,6 @@ app.post('/data',function (req, res) {
 app.get('/', function (req, res) {                                                 
     res.send(resp)
   });
-app.listen(3000);
+app.listen(process.env.PORT||3000);
 
 ///
