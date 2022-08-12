@@ -2,4 +2,4 @@
   base = "/"
   publish = "frontend/"
   command  = "nodemon"
-  functions = "my_functions/"
+  functions = "my_functions"
