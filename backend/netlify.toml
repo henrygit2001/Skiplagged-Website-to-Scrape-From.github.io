@@ -1,7 +1,7 @@
 [build]
   base = "/"
   publish = "dist/"
-  command  = "npm run build"
+  command  = "nodemon backend.js"
   functions = "my_functions/"
 [[redirects]]
   from = "/*"
