@@ -1,7 +1,7 @@
 const datapage = document.querySelector('#result')
 const form = document.getElementById('form');
 
-fetch('http://localhost:3000/')
+fetch('https://peaceful-pudding-db647f.netlify.app/.netlify/functions/api')
 .then(response => response.json())
 .then(data => {for (let i = 0; i < data[data.length-1]; i++)
 {console.log(data);
