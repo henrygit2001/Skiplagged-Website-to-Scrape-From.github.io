@@ -44,7 +44,7 @@ app.post('/data',function (req, res) {
   Flight_Scan()
 }) 
 app.get('/', function (req, res) {                                                 
-    res.send("This is backend")
+    res.send("resp")
   });
 app.listen(process.env.PORT||3000);
 
