@@ -36,7 +36,7 @@ resp.push(brands, price, duration,timeofFlight, searchOptions.resultsCount);
 })
 .catch(err => resp = err)
 }
-app.post('/data',function (req, res) {                                                 
+app.post('https://peaceful-pudding-db647f.netlify.app/.netlify/functions/api',function (req, res) {                                                 
   searchOptions.resultsCount = Number(req.body.Results_Count);
   searchOptions.from= String(req.body.From);
   searchOptions.to= String(req.body.To);
@@ -44,7 +44,7 @@ app.post('/data',function (req, res) {
   res.send(resp)
   Flight_Scan()
 }) 
-app.get('/', function (req, res) {                                                 
+app.get('https://peaceful-pudding-db647f.netlify.app', function (req, res) {                                                 
     res.send(resp)
   });
 app.listen(3000);
