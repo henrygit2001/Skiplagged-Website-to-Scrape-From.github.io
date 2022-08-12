@@ -1,6 +1,6 @@
 [build]
   base = "/"
-  publish = "backend/"
+  publish = "frontend/"
   command  = "nodemon"
   functions = "my_functions/"
 [[redirects]]
