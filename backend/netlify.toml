@@ -3,7 +3,3 @@
   publish = "frontend/"
   command  = "nodemon"
   functions = "my_functions/"
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
