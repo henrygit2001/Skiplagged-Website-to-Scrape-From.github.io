@@ -33,5 +33,5 @@ fetch("http://localhost:3000/data",
         }
     )
 }
-).then(setTimeout(()=>{document.location.reload()},2000)) 
+).then(setTimeout(()=>{document.location.reload()},3000)) 
 }})
