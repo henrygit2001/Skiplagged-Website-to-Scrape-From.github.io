@@ -1,8 +1,6 @@
 const express = require('express');
 const flightScanner = require('skiplagged-node-api');
 const app = express();
-const serverless = require("serverless-http");
-const router = express.Router();
 var cors = require('cors');
 app.use(cors());
 var bodyParser = require('body-parser')
@@ -51,14 +49,3 @@ app.listen(3000);
 
 ///
 
-
-router.get("/", (req, res) => {
-  res.json({
-    hello: "hi!"
-  });
-});
-
-app.use(`/.netlify/functions/api`, router);
-
-module.exports = app;
-module.exports.handler = serverless(app);
