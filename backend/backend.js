@@ -44,6 +44,6 @@ app.post('/data',function (req, res) {
   Flight_Scan()
 }) 
 app.get('/', function (req, res) {                                                 
-    res.send("Hello world!")
+    res.send(resp)
 });
 app.listen(process.env.PORT||3000);

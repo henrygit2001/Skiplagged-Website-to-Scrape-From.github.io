@@ -1,7 +1,7 @@
 const datapage = document.querySelector('#result')
 const form = document.getElementById('form');
 
-fetch('https://skiplagged-api.herokuapp.com/')
+fetch('http://localhost:3000/')
 .then(response => response.json())
 .then(data => {for (let i = 0; i < data[data.length-1]; i++)
 {console.log(data);
@@ -17,7 +17,7 @@ datapage.insertAdjacentHTML("beforeend",`<tr>
 
 form.addEventListener('keypress', (e) =>{
 if(e.key === "Enter"){
-fetch("https://skiplagged-api.herokuapp.com/data",
+fetch("http://localhost:3000/data",
 {
     method: "POST",
     headers: {
