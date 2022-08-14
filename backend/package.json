@@ -4,7 +4,8 @@
   "description": "This website uses fetch requests to get airline flights",
   "main": "backend.js",
   "engines":{
-    "npm": "8.5.5"
+    "npm": "8.5.5",
+    "node": "16.15.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
